@@ -121,5 +121,8 @@ defmodule AoC.Day3 do
        |> AoC.Day3.Walker.start_walk()      
     end
 end
-IO.inspect(AoC.Day3.part_1)
-IO.inspect(AoC.Day3.part_2)
+
+[:part_1, :part_2] 
+|> Enum.map(&Task.async(fn -> apply(AoC.Day3, &1, []) end))
+|> Enum.map(&Task.await/1)
+|> IO.inspect
