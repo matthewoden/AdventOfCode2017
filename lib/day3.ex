@@ -16,7 +16,7 @@ defmodule AoC.Day3.Worker do
     @count 368_078
     
     def start_link(state) do
-        GenServer.start_link(__MODULE__, state, [name: __MODULE__])
+        GenServer.start_link(__MODULE__, state)
     end
 
     def init(state), do: {:ok, state}
@@ -121,4 +121,5 @@ defmodule AoC.Day3 do
        |> AoC.Day3.Walker.start_walk()      
     end
 end
+IO.inspect(AoC.Day3.part_1)
 IO.inspect(AoC.Day3.part_2)
