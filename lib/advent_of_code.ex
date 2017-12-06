@@ -18,7 +18,15 @@ defmodule AoC do
   end
 
 
-  def read_line(line, seperator, state \\ "", func \\ fn (f) -> f end) do
+  @doc """
+  In day two, I wrote an efficient recursive line reducer, that creates
+  words, accounting for a seperator characters and newlines, and a callback
+  to be run when each word is created. This callback also allows for an early
+  exit feature, in case we're done with this line.
+
+  For day four, I refactored it into it's own function to be used on future days
+  """
+  def reduce_line(line, seperator, state \\ "", func \\ fn (f) -> f end) do
     Stream.map(line, &line_reader(&1, "", seperator, state, func))
   end
 
