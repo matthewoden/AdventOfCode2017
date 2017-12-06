@@ -6,10 +6,11 @@ defmodule AoC.Day4 do
     state for a reduce function, and the reducer callback.
 
     For part one, we just need to check if a word exists on the line. 
-    unique map solves this, adding a new key or quitting.
+    `unique_map` checks if the key exists, add a missing key, or quits when found.
 
-    For part two, need to compare anagrams of words. I wrote a recursive quicksort, 
-    and compared the sorted values of keys, following the solution of part one.
+    For part two, need to check against anagrams of existing words. I wrote a 
+    recursive quicksort, and compared the sorted values of keys. Otherwise, 
+    following the solution of part one.
     """
 
     #binary quicksort! All this binary typing can make this hard to read.
