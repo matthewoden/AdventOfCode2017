@@ -2,12 +2,13 @@ defmodule AoC.Day4 do
     
     @moduledoc """
     Note: line_reducer is a cleaned up version of my file reader from day two. See
-    `AoC` at the root, (aka `advent_of_code.ex`) It takes a seperator, and a reduce callback (with initial state)
+    `AoC` at the root, (aka `advent_of_code.ex`) It takes a seperator, the initial 
+    state for a reduce function, and the reducer callback.
 
     For part one, we just need to check if a word exists on the line. 
     unique map solves this, adding a new key or quitting.
 
-    For part two, needed to compare anagrams or words. I wrote a recursive quicksort, 
+    For part two, need to compare anagrams of words. I wrote a recursive quicksort, 
     and compared the sorted values of keys, following the solution of part one.
     """
 
