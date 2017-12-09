@@ -26,7 +26,8 @@ defmodule AoC do
 
   For day four, I refactored it into it's own function to be used on future days
   """
-  def reduce_line(line, seperator, state \\ "", func \\ fn (f) -> f end) do
+  @spec reduce_line(binary, integer, term, ((binary, term) -> term)) :: term
+  def reduce_line(line, seperator, state \\ "", func \\ fn (f, _) -> f end) do
     Stream.map(line, &line_reader(&1, "", seperator, state, func))
   end
 
